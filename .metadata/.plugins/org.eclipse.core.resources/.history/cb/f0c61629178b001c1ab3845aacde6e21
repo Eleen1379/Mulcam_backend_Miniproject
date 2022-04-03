@@ -1,0 +1,6 @@
+package com.mulcam.mj.service;
+import com.mulcam.mj.dto.index;
+
+public interface IndexService {
+
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            width: 350px;
+        }
+
+        .input-group-text {
+            display: inline-block;
+            width: 90px;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h5 class='title'>계좌 개설</h5>
+        <form id='form'>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">계좌번호</span>
+                <input type="text" class="form-control" id="id"><br>
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">이름</span>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">입금액</span>
+                <input type="text" class="form-control" id="money">
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">종류</span>
+                <span class="form-control"><input type="radio" name='type' value="normal" checked>&nbsp;일반계좌 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name='type' value="special">&nbsp;특수계좌</span>
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">등급</span>
+                <select class="form-select" id='grade' disabled>
+                    <option>VIP</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Normal</option>
+                </select>
+            </div>
+            <div class="d-grid">
+                <input type="submit" class="btn btn-primary btn-block" value='계좌개설'>
+            </div>
+        </form>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="account.js"></script>
+    <script>
+        $('input[type="radio"]').change(function() {
+            let type = $('input[type="radio"]:checked').val();
+            if(type=='special') {
+                $('select').attr('disabled',false);
+            } else {
+                $('select').attr('disabled',true);
+            }
+        });
+        
+        $('#form').submit(function() {
+            //1. 사용자가 입력한 값(계좌번호, 이름, 입금액, 등급)을 엘리먼트로부터 가져와 Account 객체를 만든다.
+            let id = +$('#id').val();
+            let name = $('#name').val();
+            let money = +$('#money').val();
+            let level = null;
+            let type = $('input[type="radio"]:checked').val();
+            if(type=='special') level = $('#grade').val();
+            let acc = new Account(id,name,money,level);
+            //2. Account 객체를 JSON string 으로 변환한다.
+            let accstr = JSON.stringify(acc);
+            alert(accstr)
+            return false;
+        });
+    </script>     
+</body>
+
+</html>

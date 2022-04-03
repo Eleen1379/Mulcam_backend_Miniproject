@@ -1,0 +1,163 @@
+p,ul {
+    text-align: left;
+}
+#cover{
+    width: 80vh;
+    text-align: center;
+}
+
+#image {
+    background-image: url(img/ticket.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* border:1px solid black; */
+}
+.a{
+    display: flex;
+    
+}
+.b{
+    justify-content:center 
+}
+#result1, #result2 {
+    font-size: 25px;
+    font-weight: 300;
+}
+body{
+    height: 100vh;
+    background-repeat : no-repeat;
+    background-size : cover;
+    margin: 0px;
+    font-family: spotify-circular, Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.direction {
+    flex-direction:column;
+    align-items: flex-center;
+    justify-content:center ;
+}
+
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+.autocomplete-items {
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.img-ticket{
+    
+     height:40vh;
+     background-position: center;
+     /* background-image: "티켓.gif" ; */
+     position : relative;
+}
+
+
+.first-des{
+    position: absolute;
+     top: 50%;
+     left: 30%;
+     transform: translate(-50%, -50%);                                                                   
+     font-size:3rem;
+     color: black;
+     z-index: 2;
+     text-align: center;
+
+}
+
+.second-arr{
+    position: absolute;
+     top: 50%;
+     left: 70%;
+     transform: translate(-50%, -50%);                                                                   
+     font-size:3rem;
+     color: black;
+     z-index: 2;
+     text-align: center;
+
+}
+
+.dep-flight-n{
+    position: absolute;
+     top: 106%;
+     left: 30%;
+     transform: translate(-50%, -50%);                                                                   
+     font-size:1rem;
+     color: black;
+     z-index: 2;
+     text-align: center;
+
+}
+
+.payway{
+    position: absolute;
+    top: 106%;
+    left: 50%;
+    transform: translate(-50%, -50%);                                                                   
+    font-size:1rem;
+    color: black;
+    z-index: 2;
+    text-align: center;
+
+}
+
+.terms-result{
+    position: absolute;
+    top: 106%;
+    left: 72%;
+    transform: translate(-50%, -50%);                                                                   
+    font-size:1rem;
+    color: black;
+    z-index: 2;
+    text-align: center;
+}
+
+/* #company{
+    display: flex;
+}
+#company-child{
+    justify-content: center;
+} */
+
+
+.logincontainer {
+    width: 400px;
+}
+
+.logininput-group-text {
+    display: inline-block;
+    width: 130px;
+}
+
+.logintitle {
+    text-align: center;
+    font-weight: bold;
+}
+.main_1166 {
+    background-color: #228BE6;
+    border-radius: 1rem;
+    border: 0px;
+    width: 1166px;
+    height: 40px;
+    margin: auto;
+    text-align: center;    
+}
+
+.logintext-white {
+--bs-text-opacity: 1;
+color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+line-height: 1!important;
+transform: translate(0%, 50%);
+}
+
+/* @media screen and max() {
+    
+} */

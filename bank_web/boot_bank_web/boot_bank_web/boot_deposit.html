@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>    
+<style>
+    .container {
+        width: 350px;
+    }
+    .input-group-text {
+        display: inline-block;
+        width:90px;
+    }
+    .title {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>   
+
+</head>
+<body>
+    <div class="container mt-3">
+        <h5 class='title'>입 금</h5>
+        <form id='form'>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">계좌번호</span>
+                <input type="text" class="form-control"><br>
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text title">입금액</span>
+                <input type="text" class="form-control">
+            </div>
+            <div class="input-group mb-2 d-grid">
+                <input type="submit" class="btn btn-primary btn-block" value='입금'>
+            </div>
+            <div class="input-group mb-2" id='result' style="display: none;">
+                <span class="input-group-text title">잔액</span>
+                <input type="text" class="form-control" id="balance" disabled>
+            </div>            
+        </form>
+    </div>   
+    
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="account.js"></script>
+    <script>
+        $(function () {
+            form.onsubmit = function () {
+                $('#result').show();
+                let accstr = '{"id":1001,"name":"park","balance":200000,"grade":"VIP"}';
+                let acc = JSON.parse(accstr);
+                $('#balance').val(acc.balance);
+                return false;
+            }
+        });
+    </script>       
+</body>
+</html>

@@ -1,0 +1,18 @@
+package com.mulcam.bank;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+
+//스프링 부트의 시작이 되는 클래스 파일이다. main 메서드를 포함하고 있고 아래의 어노테이션을 포함한다.(시험문제)
+//스프링 레거시의 홈컨트롤러와 같은 역할을 하는 클래스 파일이다.
+
+@SpringBootApplication
+public class BankMybatisApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BankMybatisApplication.class, args);
+	}
+
+}

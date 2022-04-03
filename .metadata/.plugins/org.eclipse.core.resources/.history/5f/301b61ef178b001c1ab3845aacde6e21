@@ -1,0 +1,9 @@
+package com.mulcam.mj.dao;
+
+public interface IndexDAO {
+	@Mapper
+	@Repository("IndexDAO")
+	public interface MemberDAO {
+		public Member queryMember(String id) throws Exception;
+		public void insertMember(Member mem) throws Exception;
+}

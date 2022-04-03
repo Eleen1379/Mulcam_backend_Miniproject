@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 552px;
+        }
+
+        .container {
+            /* padding:10px; */
+            border: 1px solid;
+        }
+        .header {
+            height: 40px;
+        }
+
+        .row {
+            height: 30px;
+        }
+
+        .title {
+            font-weight: bold;
+            background-color: lightgrey;
+        }
+        .colume {
+            padding:5px;
+            width: 100px;
+            float: left;
+        }
+
+        .input {
+            float: left;
+        }
+
+        input[type='submit'] {
+            font-weight: bold;
+            width:120px;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form>
+            <div class="header">
+                <h3>전체 계좌 조회</h3>
+            </div>
+            <div class="container" id="container">
+                <div class="row">
+                    <div class="title colume">계좌번호</div>
+                    <div class="title colume">이름</div>
+                    <div class="title colume">잔액</div>
+                    <div class="title colume">계좌종류</div>
+                    <div class="title colume">등급</div>
+                </div>
+            </div>
+        </form>
+    </center>
+    <script src="account.js"></script>
+    <script>
+        let accs = ['{"id":1001,"name":"hong","balance":100000,"grade":null}',
+                    '{"id":1002,"name":"park","balance":200000,"grade":"VIP"}',
+                    '{"id":1003,"name":"song","balance":300000,"grade":"Gold"}'];
+
+        let container = document.getElementById("container");
+        for(let accstr of accs) {
+            let acc = JSON.parse(accstr);
+            let row = document.createElement("div");
+            row.classList.add('row');
+            container.appendChild(row);
+            let id = document.createElement("div");
+            id.classList.add('colume');
+            id.innerHTML = acc.id;
+            // id.appendChild(document.createTextNode(acc.id));
+            let name = document.createElement("div");
+            name.classList.add('colume');
+            name.appendChild(document.createTextNode(acc.name));
+            let balance = document.createElement("div");
+            balance.classList.add('colume');
+            balance.appendChild(document.createTextNode(acc.balance));
+            let type = document.createElement("div");
+            type.classList.add('colume');
+            if(acc.grade==null) {
+                type.appendChild(document.createTextNode('일반계좌'));
+            } else {
+                type.appendChild(document.createTextNode('특수계좌'));
+            }
+            let grade = document.createElement("div");
+            grade.classList.add('colume');
+            grade.appendChild(document.createTextNode(acc.grade));
+            row.appendChild(id);
+            row.appendChild(name);
+            row.appendChild(balance);
+            row.appendChild(type);
+            row.appendChild(grade);
+        }
+        
+
+    </script>
+</body>
+
+</html>

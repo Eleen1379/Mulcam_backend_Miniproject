@@ -1,0 +1,16 @@
+package com.mulcam.mj.dto;
+
+public class Index {
+	String air;
+	String dptport;
+	String arrport;
+	String fnum;
+	String aterms;
+	public Index() {}
+	public Index(String air, String name, String password, String email) {
+		this.air=air;
+		this.dptport=dptport;
+		this.arrport=arrport;
+		this.fnum=fnum;
+	}
+}
